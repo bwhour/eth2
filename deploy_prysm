@@ -41,7 +41,8 @@ docker pull $image:$tag
 echo ""
 
 echo "=== Update containers"
-docker-compose up -d
+#docker-compose up -d
+docker-compose run --rm beacon-node
 echo ""
 
 sleep 5s
