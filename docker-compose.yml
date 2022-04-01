@@ -4,6 +4,8 @@ services:
   beacon-node:
     container_name: beacon-node
     image: gcr.io/prysmaticlabs/prysm/beacon-chain:$PRYSM_VERSION
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
     restart: always
     ports:
       - "4000:4000"
@@ -23,8 +25,6 @@ services:
       options:
         max-size: 10m
         tag: "{{.ImageName}}|{{.Name}}|{{.ImageFullID}}|{{.FullID}}"
-    stdin_open: true
-    tty: true
     networks:
       - eth2
 
