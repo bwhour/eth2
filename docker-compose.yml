@@ -23,6 +23,8 @@ services:
       options:
         max-size: 10m
         tag: "{{.ImageName}}|{{.Name}}|{{.ImageFullID}}|{{.FullID}}"
+    stdin_open: true
+    tty: true
     networks:
       - eth2
 
